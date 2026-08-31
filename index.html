@@ -26,7 +26,7 @@
 <title>박미주—영상 포트폴리오</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Poppins:wght@800&family=Fredoka:wght@700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#0f1115; --bg-elev:#161a21; --bg-card:#1b2029; --border:#2a303c;
@@ -59,10 +59,32 @@
   .portrait-wrap{position:relative; width:min(720px,92%); aspect-ratio:16/9; margin:0 auto; height:auto;}
   .portrait-text{
     position:absolute; left:50%; top:50%; z-index:0; white-space:nowrap;
-    font-size:clamp(84px,18vw,255px); font-weight:800; letter-spacing:.01em;
-    background:linear-gradient(120deg,#ffffff 35%, var(--accent) 130%);
-    -webkit-background-clip:text; background-clip:text; color:transparent; opacity:.85;
+    font-family:'Fredoka', sans-serif;
+    font-size:clamp(84px,18vw,255px); font-weight:700; letter-spacing:.01em;
+    background:radial-gradient(circle at 33% 18%, #fffef4 0%, #fff9c2 10%, #ffe600 34%, #ffcf00 58%, #e0a300 80%, #b87d00 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    filter:
+      drop-shadow(0 2px 2px rgba(184,125,0,.55))
+      drop-shadow(0 20px 24px rgba(0,0,0,.5));
+    opacity:.98;
     animation:driftX 11s ease-in-out infinite;
+  }
+  .portrait-text::before{
+    content:'PORTFOLIO';
+    position:absolute; left:0; top:0;
+    background:linear-gradient(180deg, rgba(0,0,0,0) 62%, rgba(120,70,0,.4) 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    pointer-events:none;
+  }
+  .portrait-text::after{
+    content:'PORTFOLIO';
+    position:absolute; left:0; top:0;
+    background:
+      radial-gradient(ellipse 16% 8% at 27% 14%, rgba(255,255,255,.98) 0%, rgba(255,255,255,0) 100%),
+      radial-gradient(ellipse 55% 30% at 32% 18%, rgba(255,255,255,.65) 0%, rgba(255,255,255,0) 75%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    mix-blend-mode:screen;
+    pointer-events:none;
   }
   @keyframes driftX{
     0%,100%{transform:translate(calc(-50% - 22px), -50%);}
